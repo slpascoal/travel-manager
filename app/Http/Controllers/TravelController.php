@@ -4,9 +4,19 @@ namespace App\Http\Controllers;
 
 use App\Models\Travel;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Controllers\HasMiddleware;
+use Illuminate\Routing\Controllers\Middleware;
+use Illuminate\Support\Facades\Gate;
 
-class TravelController extends Controller
+class TravelController extends Controller implements HasMiddleware
 {
+    public static function middleware()
+    {
+        return [
+            new Middleware('auth:sanctum', except: ['index', 'show'])
+        ];
+    }
+
     /**
      * Display a listing of the resource.
      */
@@ -25,7 +35,7 @@ class TravelController extends Controller
             'body' => 'required'
         ]);
 
-        $travel = Travel::create($fields);
+        $travel = $request->user()->travels()->create($fields);
 
         return ['travels' => $travel];
     }
@@ -43,6 +53,8 @@ class TravelController extends Controller
      */
     public function update(Request $request, Travel $travel)
     {
+        Gate::authorize('modify', $travel);
+
         $fields = $request->validate([
             'title' => 'required|max:255',
             'body' => 'required'
@@ -58,6 +70,8 @@ class TravelController extends Controller
      */
     public function destroy(Travel $travel)
     {
+        Gate::authorize('modify', $travel);
+
         $travel->delete();
 
         return [ 'message' => 'the travel was deleted' ];
