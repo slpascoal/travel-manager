@@ -42,7 +42,7 @@ class TravelController extends Controller implements HasMiddleware
             'applicant_name' => 'required|string|max:255',
             'destiny' => 'required|string|max:255',
             'departure_date'  => 'required|date',
-            'return_date' => 'required|date',
+            'return_date' => 'required|date|after:departure_date',
             'status' => 'nullable|in:requested,approved,canceled'
         ]);
 
