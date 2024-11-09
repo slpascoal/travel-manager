@@ -27,6 +27,7 @@ services:
             - meilisearch
             - mailpit
             - selenium
+            - swagger
     mysql:
         image: 'mysql/mysql-server:8.0'
         ports:
@@ -98,6 +99,15 @@ services:
             - 'host.docker.internal:host-gateway'
         volumes:
             - '/dev/shm:/dev/shm'
+        networks:
+            - sail
+    swagger:
+        image: composer:latest
+        container_name: swagger-composer
+        volumes:
+            - .:/var/www/html
+        working_dir: /var/www/html
+        entrypoint: ['composer', 'require', 'darkaonline/l5-swagger']
         networks:
             - sail
 networks:
