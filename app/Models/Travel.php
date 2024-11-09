@@ -10,8 +10,11 @@ class Travel extends Model
     use HasFactory;
 
     protected $fillable = [
-        'title',
-        'body'
+        'applicant_name',
+        'destiny',
+        'departure_date',
+        'return_date',
+        'status'
     ];
 
     public function user() {
