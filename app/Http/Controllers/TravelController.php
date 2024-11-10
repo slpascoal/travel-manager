@@ -71,7 +71,7 @@ class TravelController extends Controller implements HasMiddleware
      *         required=true,
      *         @OA\JsonContent(
      *             required={"applicant_name", "destiny", "departure_date", "return_date", "status"},
-     *             @OA\Property(property="applicant_name", type="string", example="John Doe"),
+     *             @OA\Property(property="applicant_name", type="string", example="Márcia"),
      *             @OA\Property(property="destiny", type="string", example="Paris"),
      *             @OA\Property(property="departure_date", type="string", format="date", example="2024-11-15"),
      *             @OA\Property(property="return_date", type="string", format="date", example="2024-11-20"),

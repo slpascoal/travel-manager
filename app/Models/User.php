@@ -13,10 +13,11 @@ use Laravel\Sanctum\HasApiTokens;
  * @OA\Schema(
  *     schema="User",
  *     type="object",
- *     required={"id", "name", "email", "created_at", "updated_at"},
+ *     required={"id", "name", "email", "password", "created_at", "updated_at"},
  *     @OA\Property(property="id", type="integer", example=1),
  *     @OA\Property(property="name", type="string", example="Travel Salesperson"),
  *     @OA\Property(property="email", type="string", format="email", example="travel@example.com"),
+ *     @OA\Property(property="password", type="string", example="123@pass"),
  *     @OA\Property(property="created_at", type="string", format="date-time", example="2024-11-09T00:00:00Z"),
  *     @OA\Property(property="updated_at", type="string", format="date-time", example="2024-11-09T00:00:00Z")
  * )

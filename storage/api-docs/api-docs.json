@@ -2,7 +2,7 @@
     "openapi": "3.0.0",
     "info": {
         "title": "API Travel Manager",
-        "description": "API developed with Docker, Laravel Sail, MySQL and Laravel Sanctum to manage corporate travel requests.",
+        "description": "API developed with Docker, Laravel Sail, MySQL, PHPUnit and Laravel Sanctum to manage corporate travel requests.",
         "contact": {
             "email": "slpascoal01@gmail.com"
         },
@@ -239,7 +239,7 @@
                                 "properties": {
                                     "applicant_name": {
                                         "type": "string",
-                                        "example": "John Doe"
+                                        "example": "Márcia"
                                     },
                                     "destiny": {
                                         "type": "string",
@@ -502,6 +502,7 @@
                     "id",
                     "name",
                     "email",
+                    "password",
                     "created_at",
                     "updated_at"
                 ],
@@ -518,6 +519,10 @@
                         "type": "string",
                         "format": "email",
                         "example": "travel@example.com"
+                    },
+                    "password": {
+                        "type": "string",
+                        "example": "123@pass"
                     },
                     "created_at": {
                         "type": "string",
