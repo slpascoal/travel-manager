@@ -40,9 +40,7 @@ obs.: o Docker Desktop deve estar aberto para os containers subirem.
 
 Com o Docker Desktop aberto (ou Docker Engine instalado), abra o terminal e faça:
 - Abra o WSL executando `wsl`
-- Faça o Git Clone: `git clone https://github.com/slpascoal/travel-manager.git`
-    - O git irá requisitar um usuário, pode digitar qualquer
-    - O password está no email enviado para a Onfly
+- Faça o Git Clone
 - Após fazer o git clone, abra a pasta do projeto: `cd travel-manager/`
 - Dentro da pasta do projeto, execute o seguinte comando para instalar as dependencias do Composer (requisitado na documentação [Laravel Sail](https://laravel.com/docs/11.x/sail#installing-composer-dependencies-for-existing-projects)):
 ```
